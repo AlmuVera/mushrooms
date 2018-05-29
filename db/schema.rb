@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180527153158) do
+ActiveRecord::Schema.define(version: 20180529091833) do
 
   create_table "mushrooms", force: :cascade do |t|
     t.boolean "edible"
     t.string "cap_shape"
     t.string "cap_surface"
     t.string "cap_color"
-    t.string "bruises?"
+    t.string "bruises"
     t.string "odor"
     t.string "gill_attachment"
     t.string "gill_spacing"
