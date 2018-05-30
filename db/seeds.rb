@@ -8,14 +8,19 @@
 
 require 'open-uri'
 require 'csv'
+
+Mushroom.destroy_all
+
+
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data'
 info = open(url).read
 mushrooms = CSV.parse(info)
 
-mushrooms.first
-line = mushrooms.first
+# mushrooms.first
+# line = mushrooms.first
 
 mushrooms.each do |line|
+
 edible,
 cap_shape,
 cap_surface,
@@ -39,39 +44,35 @@ ring_type,
 spore_print_colororange,
 population,
 habitat = line
+
+
+line = Mushroom.new(
+  edible: edible,
+  cap_shape: cap_shape,
+  cap_surface: cap_surface,
+  cap_color: cap_color,
+  bruises: bruises,
+  odor: odor,
+  gill_attachment: gill_attachment,
+  gill_spacing: gill_spacing,
+  gill_size: gill_size,
+  gill_color: gill_color,
+  stalk_shape: stalk_shape,
+  stalk_root: stalk_root,
+  stalk_surface_above_ring: stalk_surface_above_ring,
+  stalk_surface_below_ring: stalk_surface_below_ring,
+  stalk_color_above_ring: stalk_color_above_ring,
+  stalk_color_below_ring: stalk_color_below_ring,
+  veil_type: veil_type,
+  veil_color: veil_color,
+  ring_number: ring_number,
+  ring_type: ring_type,
+  spore_print_colororange: spore_print_colororange,
+  population: population,
+  habitat: habitat)
+line.save
+
 end
-
-# mushroom = Mushroom.new(
-#   edible: edible,
-#   cap_shape: cap_shape,
-#   cap_surface: cap_surface,
-#   cap_color: cap_color,
-#   bruises: bruises,
-#   odor: odor,
-#   gill_attachment: gill_attachment,
-#   gill_spacing: gill_spacing,
-#   gill_size: gill_size,
-#   gill_color: gill_color,
-#   stalk_shape: stalk_shape,
-#   stalk_root: stalk_root,
-#   stalk_surface_above_ring: stalk_surface_above_ring,
-#   stalk_surface_below_ring: stalk_surface_below_ring,
-#   stalk_color_above_ring: stalk_color_above_ring,
-#   stalk_color_below_ring: stalk_color_below_ring,
-#   veil_type: veil_type,
-#   veil_color: veil_color,
-#   ring_number: ring_number,
-#   ring_type: ring_type,
-#   spore_print_colororange: spore_print_colororange,
-#   population: population,
-#   habitat: habitat)
-# mushroom.save
-
-# end
-
-
-
-
 
 
 
