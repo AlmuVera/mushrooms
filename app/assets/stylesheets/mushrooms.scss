@@ -1,3 +1,39 @@
 // Place all the styles related to the Mushrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#banner{
+  text-align: center;
+  background-image: url("mushroom.jpg");
+  background-size: cover;
+  padding: 150px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  h1{
+    font-size: 50px;
+  }
+}
+
+.mushrooms-content{
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #80808073;
+  ul{
+    text-align:center;
+  }
+  li{
+    list-style-position: inside;
+  }
+}
+
+.form-control{
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.button{
+  padding: 10px;
+  color: white;
+  background-color: #ae2e2eab;
+  border-radius: 5px;
+}

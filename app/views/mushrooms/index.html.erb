@@ -1,0 +1,38 @@
+<div id="banner">
+
+    <h1>MUSHROOMS</h1>
+    <p>This search bar will find mushrooms chooshing the different attributes in the future :P</p>
+
+    <%= form_tag mushrooms_path, method: :get, class: "form-inline" do%>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      placeholder: "Search"
+      %>
+      <%= submit_tag "Find a mushroom", class: "button" %>
+      <% end %>
+
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="mushrooms-content">
+        <ol class="dropdown-menu">
+          <h2>LIST OF MUSHROOMS</h2>
+          <% @mushrooms.each do |m| %>
+          <li><%= "#{m.edible}, #{m.cap_shape},
+          #{m.cap_surface}, #{m.cap_color}, #{m.bruises}, #{m.odor}, #{m.gill_attachment},
+          #{m.gill_spacing}, #{m.gill_size}, #{m.gill_color}, #{m.stalk_shape}, #{m.stalk_root}, #{m.stalk_surface_above_ring}, #{m.stalk_surface_below_ring}, #{m.stalk_color_above_ring}, #{m.stalk_color_below_ring}, #{m.veil_type}, #{m.veil_color}, #{m.ring_number}, #{m.ring_type}, #{m.spore_print_colororange}, #{m.population}, #{m.habitat}" %></li>
+          <% end %>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
